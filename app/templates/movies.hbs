@@ -1,0 +1,23 @@
+<div class='slide-container'>
+  <nav>
+    <ul>
+      {{#each groupedContent}}
+        <li class='group'>
+          <strong class='group-title'>{{unbound group.key}}</strong>
+          <ul class='group-list'>
+            {{#each}}
+              <li class='group-item' {{action 'hideMenu'}}>
+                {{#link-to 'movie' this tagName='span'}}
+                  {{unbound name}}
+                {{/link-to}}
+              </li>
+            {{/each}}
+          </ul>
+        </li>
+      {{/each}}
+    </ul>
+  </nav>
+  <div class='movie-container'>
+    {{outlet}}
+  </div>
+</div>
